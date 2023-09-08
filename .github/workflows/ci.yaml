@@ -38,9 +38,9 @@ jobs:
           git commit -m "CI automation $(date)"
 
       - name: Push changes
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/customized_test' && github.event_name == 'push'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          github_token: ${{ secrets.K6S_GITHUB_TOKEN }}
+          branch: customized_test
           force: true

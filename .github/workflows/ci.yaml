@@ -23,8 +23,6 @@ jobs:
 
       - name: Bundle
         run: npm run build
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Add dist bundle
         if: github.ref == 'refs/heads/customized_test' && github.event_name == 'push'
